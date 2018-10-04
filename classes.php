@@ -2,13 +2,16 @@
 
 class Area 
 {
+    public $id;
     public $name;   
 }
 
 class Goal
 {
+    public $id;
     public $name;   
-    public $completed;   
+    public $completed;  
+    public $AreaID; 
 }
 
 class Project 

@@ -6,12 +6,13 @@ $pdo = connectToDB();
 
 $areas = fetchAllAreas($pdo);
 $goals = fetchAllGoals($pdo);
-$physicalgoals = fetchPhysicalGoals($pdo);
 $actions = fetchAllActions($pdo);
 
 
-foreach ($goals as $goal) { 
-   // distribute goals into their relevant array
+foreach ($areas as $area) { 
+   foreach ($goals as $goal) {
+
+   }
 }
 
 

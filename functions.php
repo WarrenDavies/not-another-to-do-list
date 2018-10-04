@@ -21,27 +21,21 @@ function fetchAllActions($pdo) {
     return $statement->fetchall(PDO::FETCH_CLASS, 'Action');
 }
 
-function fetchAllGoals($pdo) {
-    $statement = $pdo->prepare('select * from goals');
-    $statement->execute();
-    return $statement->fetchall(PDO::FETCH_CLASS, 'Goal');
-}
-
 function fetchAllAreas($pdo) {
     $statement = $pdo->prepare('select * from areas');
     $statement->execute();
     return $statement->fetchall(PDO::FETCH_CLASS, 'Area');
 }
 
-function fetchPhysicalGoals($pdo) {
+function fetchAllGoals($pdo) {
     $statement = $pdo-> prepare(
-        'select *
+        'select g.name, g.id, g.completed, a.id AreaID
         from goals g
         inner join GoalAreas ga
             on g.id = ga.GoalID
         inner join Areas a
-            on ga.AreaID = a.id
-        ');
+            on ga.AreaID = a.id;'
+            );
     $statement->execute();
     return $statement->fetchall(PDO::FETCH_CLASS, 'Goal');
 }
