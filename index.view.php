@@ -13,11 +13,29 @@
     <?php } ?>
 </ul> 
 <ul>
-    <?php foreach ($tasks as $task) { ?>
+    <?php foreach ($goals as $goal) { ?>
         <li><b>
-            <?= $task->completed ? '<strike>' : ''; ?>
-            <?php $task->silly(); ?>
-            <?= $task->completed ? '</strike>' : ''; ?>
+            <?= $goal->name; ?>
+        </li></b>
+    <?php } ?>
+</ul> 
+<ul>
+    <?php foreach ($actions as $action) { ?>
+        <li><b>
+            <?= $action->completed ? '<strike>' : ''; ?>
+            <?php $action->name; ?>
+            <?= $action->completed ? '</strike>' : ''; ?>
+        </li></b>
+    <?php } ?>
+</ul>
+
+<ul>
+    <?php foreach ($physicalgoals as $physicalgoal) { ?>
+
+        <li><b>
+            <?= $physicalgoal->completed ? '<strike>' : ''; ?>
+            <?php echo $physicalgoal->name; ?>
+            <?= $physicalgoal->completed ? '</strike>' : ''; ?>
         </li></b>
     <?php } ?>
 </ul>

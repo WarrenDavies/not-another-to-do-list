@@ -2,30 +2,23 @@
 
 class Area 
 {
-    public $description;   
+    public $name;   
 }
 
 class Goal
 {
     public $name;   
     public $completed;   
-    public $area1;   
-    public $area2;   
-    public $area3;   
-    public $area4;   
-    public $area5;   
 }
 
 class Project 
 {
-    public $description;   
+    public $name;   
+    public $completed;
 }
 
-class Task 
+class Action 
 {
-    public $description;
+    public $name;
     public $completed;
-    public function silly() {
-        echo $this->description . " THIS IS A METHOD DOING THIS HELLO I AM A METHOD";
-    }
 }

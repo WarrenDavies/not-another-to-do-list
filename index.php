@@ -1,12 +1,18 @@
 <?php
 require 'functions.php';
-require 'Task.php';
-require 'Area.php';
+require 'classes.php';
 
 $pdo = connectToDB();
 
 $areas = fetchAllAreas($pdo);
-$goals = fetchAllTasks($pdo);
-$tasks = fetchAllTasks($pdo);
+$goals = fetchAllGoals($pdo);
+$physicalgoals = fetchPhysicalGoals($pdo);
+$actions = fetchAllActions($pdo);
+
+
+foreach ($goals as $goal) { 
+   // distribute goals into their relevant array
+}
+
 
 require 'index.view.php';
