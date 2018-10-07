@@ -12,6 +12,24 @@ foreach ($areas as $area) {
                 <?= $goal->completed ? '<strike>' : ''; ?>
                 <?php echo $goal->name; ?>
                 <?= $goal->completed ? '</strike>' : ''; ?>
+                    <?php
+                    $goal_has_project = false;
+                    foreach ($projects as $project) {
+                        if ($project->GoalID == $goal->id) {
+                            if (!$goal_has_project) {
+                                echo '<ul>';
+                                $goal_has_project = true;
+                            } ?>
+                            <li> 
+                                <?= $project->completed ? '<strike>' : ''; ?>
+                                <?php echo $project->name; ?>
+                                <?= $project->completed ? '</strike>' : ''; ?> 
+                            </li>
+                        <?php }
+                    } 
+                    if ($goal_has_project) {
+                        echo "</ul>";
+                    }?>
             </li>
       <?php }
         }

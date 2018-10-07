@@ -16,12 +16,15 @@ class Goal
 
 class Project 
 {
+    public $id;
     public $name;   
     public $completed;
+    public $GoalID;
 }
 
 class Action 
 {
+    public $id;
     public $name;
     public $completed;
 }
